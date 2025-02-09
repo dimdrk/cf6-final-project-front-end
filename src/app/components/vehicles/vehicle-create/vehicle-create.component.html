@@ -1,0 +1,63 @@
+<div class="main container mt-5">
+    <div class="row justify-content-center">
+        <h2 class="text-center">Add your Vehicle</h2>        
+
+        <form class="row g-3" [formGroup]="vehicleCreateForm" (ngSubmit)="onSubmit()">
+            <div class="col-md-4 mb-3">
+                <label for="registrationNumber" class="form-label">Registration Number</label>
+                <input type="text" id="registrationNumber" class="form-control" formControlName="registrationNumber" required />
+                <div *ngIf="vehicleCreateForm.get('registrationNumber')?.invalid && vehicleCreateForm.get('registrationNumber')?.touched" class="text-danger">
+                    Registration number is required.
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label for="mileRange" class="form-label">Mile Range</label>
+                <input type="text" id="mileRange" class="form-control" formControlName="mileRange" required />
+                <div *ngIf="vehicleCreateForm.get('mileRange')?.invalid && vehicleCreateForm.get('mileRange')?.touched" class="text-danger">
+                    Mile Range is required.
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label for="manufacture" class="form-label">Manufacture</label>
+                <input type="text" id="manufacture" class="form-control" formControlName="manufacture"/>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label for="model" class="form-label">Model</label>
+                <input type="text" id="model" class="form-control" formControlName="model"/>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <label for="color" class="form-label">Color</label>
+                <input type="text" id="color" class="form-control" formControlName="color"/>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <label for="registrationDate" class="form-label">Registration Date</label>
+                <input type="date" id="registrationDate" class="form-control" formControlName="registrationDate"/>
+            </div>
+
+            <div class="col-md-2 mb-3">
+                <label for="vehicleType" class="form-label">Vehicle Type</label>
+                <select class="form-select" id="vehicleType" formControlName="vehicleType" required>
+                    <option value="CAR" selected>Car</option>
+                    <option value="MOTORCYCLE">Motorcycle</option>
+                    <option value="TRUCK">Truck</option>
+                    <option value="BUS">Bus</option>
+                    <option value="BOAT">Boat</option>
+                </select>
+            </div>
+
+          <div class="row">
+            <div class="col text-center">
+                <button type="submit" class="btn btn-outline-secondary m-5" [disabled]="vehicleCreateForm.invalid">Submit</button>
+                <button type="button" class="btn btn-outline-danger m-5" (click)="onReset()">Reset</button>
+                <button type="button" class="btn btn-outline-secondary m-5" routerLink="/vehicle/viewVehicles">Return to list</button>
+            </div>
+          </div>  
+        </form>
+
+    </div>
+</div>  

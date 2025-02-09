@@ -1,0 +1,46 @@
+<div class="main container mt-5">
+    <div class="row justify-content-center">
+        <h2 class="text-center">View and Update Service Record</h2>        
+
+        <form class="row g-3 w-75" [formGroup]="serviceRecordForm" (ngSubmit)="onSubmit()">
+            <div class="col-md-2 mb-3">
+                <label for="id" class="form-label">Number of Service</label>
+                <input type="number" id="id" class="form-control" formControlName="id" required />
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="registerNumber" class="form-label">Registration Number</label>
+                <input type="text" id="registerNumber" class="form-control" formControlName="registerNumber" required />
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="serviceMileRange" class="form-label">Service Mile Range</label>
+                <input type="text" id="serviceMileRange" class="form-control" formControlName="serviceMileRange" required />
+                <div *ngIf="serviceRecordForm.get('serviceMileRange')?.invalid && serviceRecordForm.get('serviceMileRange')?.touched" class="text-danger">
+                    Service Mile Range is required.
+                  </div>
+            </div>
+          
+            <div class="col-md-6 mb-3">
+                <label for="dateOfService" class="form-label">Date Of Service</label>
+                <input type="date" id="dateOfService" class="form-control" formControlName="dateOfService" />
+            </div>
+
+            <div class="col-md-12 mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea type="text" id="description" class="form-control" rows="5" formControlName="description" required ></textarea >
+                <div *ngIf="serviceRecordForm.get('description')?.invalid && serviceRecordForm.get('description')?.touched" class="text-danger">
+                    description is required.
+                  </div>
+            </div>
+
+          <div class="row">
+            <div class="col text-center">
+                <button type="submit" class="btn btn-outline-secondary m-4" [disabled]="serviceRecordForm.invalid">Update</button>
+                <button type="button" class="btn btn-outline-danger m-4" (click)="onDelete()">Delete</button>
+                <button type="button" class="btn btn-outline-secondary m-4" routerLink="/serviceRecord/viewRecords">Return to list</button>
+            </div>
+          </div>  
+        </form>
+    </div>   
+</div>

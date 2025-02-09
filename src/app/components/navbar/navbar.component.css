@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+  
+
+.navbar {
+    border-bottom: 1px solid #333333;
+}
+
+.navbar-brand {
+    font-family: 'Poiret One', cursive;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: white!important;
+    font-size: 1.2rem;
+}
+
+.nav-link:hover {
+    color: rgb(209, 212, 212)!important;
+}
+
+.dropdown-item:hover {
+    color: black!important;
+}

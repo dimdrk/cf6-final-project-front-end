@@ -1,0 +1,31 @@
+<div class="main container mt-5">
+    <h3 class="text-center">List of Users</h3>
+    <div>
+      <table class="table table-bordered table-striped text-wrap">
+          <thead>
+            <tr>
+              <th role="button" (click)="sortData('firstname')">Firstname {{sortSign('firstname')}}</th>
+              <th role="button" (click)="sortData('lastname')">Lastname {{sortSign('lastname')}}</th>
+              <th role="button" (click)="sortData('username')">Username {{sortSign('username')}}</th>
+              <th role="button" (click)="sortData('email')">Email {{sortSign('email')}}</th>
+              <th role="button" (click)="sortData('phoneNumber')">Phone Number {{sortSign('phoneNumber')}}</th>
+              <th role="button" (click)="sortData('city')">City {{sortSign('city')}}</th>
+              <th role="button" (click)="sortData('role')">Role {{sortSign('role')}}</th>
+              <th>View User</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let row of Users" class="align-middle">
+                <td>{{row.firstname}}</td>
+                <td>{{row.lastname}}</td>
+                <td>{{row.username}}</td>
+                <td>{{row.email}}</td>
+                <td>{{row.phoneNumber}}</td>
+                <td>{{row.city}}</td>
+                <td>{{row.role}}</td>              
+                <td><button class="btn btn-outline-success" (click)="viewUser(row)">View</button></td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>

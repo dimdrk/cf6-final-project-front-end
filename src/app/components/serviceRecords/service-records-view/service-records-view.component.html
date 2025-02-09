@@ -1,0 +1,34 @@
+<div class="main container mt-5">
+  <h3 class="text-center">List of Service Records</h3>
+  <div>
+    <span>Add a new Service Record</span>
+    <button class="btn btn-sm btn-outline-secondary m-3" (click)="addNewSeviceRecord()">Click here</button>
+  </div>
+  <table class="table table-bordered table-striped text-wrap">
+      <thead>
+        <tr>
+          <th scope="col">Number of Service</th>
+          <th scope="col">Registration Number</th>
+          <th scope="col">Mile Range</th>
+          <th scope="col">Description</th>
+          <th scope="col">Date of Service</th>
+          <th scope="col">View Record</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of ServiceRecords" class="align-middle">
+          <td>{{row.id}}</td>
+          <td>{{row.registerNumber}}</td>
+          <td>{{row.serviceMileRange}}</td>
+          <td>{{row.description}}</td>
+          <td>{{row.dateOfService}}</td>
+          <td><button class="btn btn-outline-success" (click)="viewServiceRecord(row)">View</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="col text-end">
+          <button type="button" class="btn btn-outline-secondary m-5" routerLink="/vehicle/viewVehicles">Return to Vehicle List</button>
+      </div>
+    </div>  
+</div>

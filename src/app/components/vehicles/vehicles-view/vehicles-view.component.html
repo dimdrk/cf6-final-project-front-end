@@ -1,0 +1,35 @@
+<div class="main container mt-5">
+  <h3 class="text-center">List of Vehicles</h3>
+  <div>
+    <span>Add a new Vehicle</span>
+    <button class="btn btn-sm btn-outline-secondary m-3" (click)="addNewVehicle()">Click here</button>
+  </div>
+  <div>
+    <table class="table table-bordered table-striped text-wrap">
+        <thead>
+          <tr>
+            <th role="button" (click)="sortData('registrationNumber')">Registration Number {{sortSign('registrationNumber')}}</th>
+            <th role="button" (click)="sortData('mileRange')">Mile Range {{sortSign('mileRange')}}</th>
+            <th role="button" (click)="sortData('manufacture')">Manufacture {{sortSign('manufacture')}}</th>
+            <th role="button" (click)="sortData('model')">Model {{sortSign('model')}}</th>
+            <th role="button" (click)="sortData('color')">Color {{sortSign('color')}}</th>
+            <th role="button" (click)="sortData('registrationDate')">Registration Date {{sortSign('registrationDate')}}</th>
+            <th role="button" (click)="sortData('vehicleType')">Vehicle Type{{sortSign('vehicleType')}}</th>
+            <th>View Vehicle</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of Vehicles" class="align-middle">
+              <td>{{row.registrationNumber}}</td>
+              <td>{{row.mileRange}}</td>
+              <td>{{row.manufacture}}</td>
+              <td>{{row.model}}</td>
+              <td>{{row.color}}</td>
+              <td>{{row.registrationDate}}</td>
+              <td>{{row.vehicleType}}</td>              
+              <td><button class="btn btn-outline-success" (click)="viewVehicle(row)">View</button></td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>

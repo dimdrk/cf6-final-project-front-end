@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+  
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 80px;
+    height: 100%;
+}

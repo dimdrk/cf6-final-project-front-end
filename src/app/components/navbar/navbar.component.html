@@ -1,0 +1,41 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark py-3">
+    <div class="container-lg">
+      <a class="navbar-brand me-auto" routerLink="">AutoTrackPro</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>      
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item p-3">
+            <a class="nav-link" routerLink="user/viewUser">View your user details</a>
+          </li>
+          <li class="nav-item p-3">
+            <a class="nav-link" routerLink="vehicle/viewVehicles">Vehicles</a>
+          </li>
+          <li class="nav-item p-3">
+            <a class="nav-link" routerLink="serviceRecord/viewRecords">Service Records</a>
+          </li>
+          <li class="nav-item p-3">
+            <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About Us
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">            
+            @if (user()) {
+              <span class="me-3 d-flex gap-2 text-light align-items-center">
+                  Welcome, {{user()?.Username}}
+                  <mat-icon role="button" class="icon-link-hover" (click)="logout()">logout</mat-icon>
+              </span>
+            } @else {    
+              <span class="me-3 d-flex gap-2 text-light align-items-center">
+                  
+                  <a class="nav-link" routerLink="login">Login/Sign Up</a>
+              </span>
+            }
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
