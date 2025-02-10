@@ -25,3 +25,6 @@ Bootstrap (Styling & UI components)
 Lodash (Sorting utilities)
 
 Angular Router (Navigation between components)
+
+~ built and deploy~
+-ng serve
